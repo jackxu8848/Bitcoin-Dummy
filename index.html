@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto for Dummys</title>
+    <title>Bitcoin for Dummies</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="logo">
                     <span class="bitcoin-symbol">₿</span>
-                    <span class="logo-text">Bitcoin Knowledge Base</span>
+                    <span class="logo-text">Bitcoin for Dummies</span>
                 </div>
             </div>
         </nav>
@@ -21,19 +21,26 @@
     <main>
         <section class="knowledge-base">
             <div class="container">
-                <h1 class="page-title">Bitcoin Knowledge Base</h1>
-                
                 <div class="tabs-container">
                     <div class="tabs">
-                        <button class="tab-button active" data-tab="whitepaper">Bitcoin White Paper</button>
+                        <button class="tab-button active" data-tab="home">Home</button>
+                        <button class="tab-button" data-tab="whitepaper">Bitcoin White Paper</button>
                         <button class="tab-button" data-tab="videos">Videos</button>
                         <button class="tab-button" data-tab="blogs">Blogs</button>
                         <button class="tab-button" data-tab="faqs">FAQs</button>
                     </div>
 
                     <div class="tab-content">
+                        <!-- Home Tab -->
+                        <div id="home" class="tab-pane active">
+                            <h2>Why this site is built?</h2>
+                            <div class="content-section">
+                                <p class="intro-text">The simple answer is: so that people can understand bitcoin to its core before investing in bitcoin. The motto I hold most valuable in investing is from Peter Lynch: "Know what you own. If you can't explain to a 5 year old why you own a stock (or asset), you shouldn't own it". Bitcoin has been envied, questioned, and sometimes even despised by the broader population. People are envied of the 100X return, question if it's a ponzi scheme, despised by the speculation and gambling nature of crypto, and don't understand why bitcoin hasn't fallen to zero despite the opinions of many "experts". This website aims to help us demystify and understand bitcoin as if we are all 5 year olds.</p>
+                            </div>
+                        </div>
+
                         <!-- Bitcoin White Paper Tab -->
-                        <div id="whitepaper" class="tab-pane active">
+                        <div id="whitepaper" class="tab-pane">
                             <h2>Bitcoin White Paper</h2>
                             <div class="content-section">
                                 <p class="intro-text">The original Bitcoin white paper by Satoshi Nakamoto, published in 2008, laid the foundation for decentralized digital currency.</p>
@@ -71,38 +78,8 @@
                             <div class="content-section">
                                 <p class="intro-text">Educational videos about Bitcoin, blockchain technology, and cryptocurrency fundamentals.</p>
                                 
-                                <div class="video-grid">
-                                    <div class="video-card">
-                                        <div class="video-placeholder">
-                                            <span class="play-icon">▶</span>
-                                        </div>
-                                        <h3>Introduction to Bitcoin</h3>
-                                        <p>Learn the basics of Bitcoin and how it works.</p>
-                                    </div>
-                                    
-                                    <div class="video-card">
-                                        <div class="video-placeholder">
-                                            <span class="play-icon">▶</span>
-                                        </div>
-                                        <h3>How Bitcoin Transactions Work</h3>
-                                        <p>Understanding the blockchain and transaction verification process.</p>
-                                    </div>
-                                    
-                                    <div class="video-card">
-                                        <div class="video-placeholder">
-                                            <span class="play-icon">▶</span>
-                                        </div>
-                                        <h3>Bitcoin Mining Explained</h3>
-                                        <p>An in-depth look at the proof-of-work consensus mechanism.</p>
-                                    </div>
-                                    
-                                    <div class="video-card">
-                                        <div class="video-placeholder">
-                                            <span class="play-icon">▶</span>
-                                        </div>
-                                        <h3>Bitcoin Wallet Security</h3>
-                                        <p>Best practices for keeping your Bitcoin safe and secure.</p>
-                                    </div>
+                                <div class="video-grid" id="video-grid">
+                                    <!-- YouTube videos will be loaded here dynamically -->
                                 </div>
                             </div>
                         </div>
@@ -113,7 +90,8 @@
                             <div class="content-section">
                                 <p class="intro-text">Read articles and blog posts about Bitcoin developments, analysis, and insights.</p>
                                 
-                                <div class="blog-list">
+                                <div class="blog-list" id="blog-list">
+                                    <!-- Patreon blog post will be loaded here dynamically -->
                                     <article class="blog-item">
                                         <div class="blog-meta">
                                             <span class="blog-date">January 15, 2024</span>
