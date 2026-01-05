@@ -65,17 +65,69 @@ header {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
-.nav-menu a {
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 1rem 1.5rem;
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
-.nav-menu a:hover {
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Dropdown Menu Styles */
+.has-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 0 0 5px 5px;
+    border: 1px solid var(--border-color);
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.has-dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(247, 147, 26, 0.1);
     color: var(--primary-color);
 }
 
@@ -347,6 +399,23 @@ footer .container {
     min-height: calc(100vh - 200px);
 }
 
+.content-area {
+    position: relative;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.section-content {
+    padding: 1rem 0;
+}
+
 .page-title {
     text-align: center;
     font-size: 3rem;
@@ -480,6 +549,43 @@ footer .container {
 .info-card .btn {
     margin-top: 1rem;
     margin-right: 1rem;
+}
+
+/* Recommended Websites Styles */
+.recommended-websites-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.website-card {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.website-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.website-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.website-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.website-card .btn {
+    margin-top: 1rem;
 }
 
 /* Video Styles */
@@ -727,7 +833,8 @@ footer .container {
     }
 
     .whitepaper-info,
-    .video-grid {
+    .video-grid,
+    .recommended-websites-list {
         grid-template-columns: 1fr;
     }
 
