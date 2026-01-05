@@ -5,35 +5,91 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Tab functionality
+// Navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabPanes = document.querySelectorAll('.tab-pane');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    const contentSections = document.querySelectorAll('.content-section');
+    const hasDropdowns = document.querySelectorAll('.has-dropdown');
 
-    // Handle tab button clicks
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-            if (targetTab) {
-                switchTab(targetTab, this);
+    // Handle main navigation link clicks
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetSection = this.getAttribute('data-section');
+            
+            if (targetSection) {
+                // Handle dropdown toggle for "Websites"
+                if (this.parentElement.classList.contains('has-dropdown')) {
+                    // Toggle dropdown
+                    hasDropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                    this.parentElement.classList.toggle('active');
+                    
+                    // Don't switch sections, just toggle dropdown
+                    return;
+                }
+                
+                // Switch to section
+                switchSection(targetSection, this);
             }
         });
     });
 
-    // Function to switch tabs
-    function switchTab(targetTab, activeButton) {
-        // Remove active class from all buttons and panes
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabPanes.forEach(pane => pane.classList.remove('active'));
+    // Handle dropdown item clicks
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetSection = this.getAttribute('data-section');
+            
+            if (targetSection) {
+                // Close dropdown
+                hasDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+                
+                // Switch to section
+                switchSection(targetSection, null);
+            }
+        });
+    });
 
-        // Add active class to clicked button and corresponding pane
-        if (activeButton) {
-            activeButton.classList.add('active');
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.has-dropdown')) {
+            hasDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
         }
-        const targetPane = document.getElementById(targetTab);
-        if (targetPane) {
-            targetPane.classList.add('active');
+    });
+
+    // Function to switch sections
+    function switchSection(targetSection, activeLink) {
+        // Remove active class from all sections and links
+        contentSections.forEach(section => section.classList.remove('active'));
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Add active class to target section
+        const targetSectionElement = document.getElementById(targetSection);
+        if (targetSectionElement) {
+            targetSectionElement.classList.add('active');
         }
+        
+        // Add active class to clicked link (if provided and not a dropdown parent)
+        if (activeLink && !activeLink.parentElement.classList.contains('has-dropdown')) {
+            activeLink.classList.add('active');
+        }
+    }
+
+    // Initialize: show home section by default
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+        homeSection.classList.add('active');
+    }
+    const homeLink = document.querySelector('[data-section="home"]');
+    if (homeLink) {
+        homeLink.classList.add('active');
     }
 
     // FAQ accordion functionality
