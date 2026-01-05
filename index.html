@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin for Dummies</title>
+    <title>比特币入门指南</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,8 +12,27 @@
             <div class="container">
                 <div class="logo">
                     <span class="bitcoin-symbol">₿</span>
-                    <span class="logo-text">Bitcoin for Dummies</span>
+                    <span class="logo-text">比特币入门指南</span>
                 </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="home">首页</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link" data-section="websites">网站</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item" data-section="whitepaper">比特币白皮书</a></li>
+                            <li><a href="#" class="dropdown-item" data-section="blogs">博客</a></li>
+                            <li><a href="#" class="dropdown-item" data-section="recommended-websites">推荐网站</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="videos">视频</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="faqs">常见问题</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -21,62 +40,53 @@
     <main>
         <section class="knowledge-base">
             <div class="container">
-                <div class="tabs-container">
-                    <div class="tabs">
-                        <button class="tab-button active" data-tab="home">Home</button>
-                        <button class="tab-button" data-tab="whitepaper">Bitcoin White Paper</button>
-                        <button class="tab-button" data-tab="videos">Videos</button>
-                        <button class="tab-button" data-tab="blogs">Blogs</button>
-                        <button class="tab-button" data-tab="faqs">FAQs</button>
+                <div class="content-area">
+                    <!-- Home Section -->
+                    <div id="home" class="content-section active">
+                        <h2>为什么创建这个网站？</h2>
+                        <div class="section-content">
+                            <p class="intro-text">简单的答案是：为了让人们在投资比特币之前能够从根本上理解比特币。我在投资方面最珍视的座右铭来自彼得·林奇："了解你拥有什么。如果你无法向一个5岁的孩子解释你为什么拥有某只股票（或资产），那么你就不应该拥有它"。比特币一直被更广泛的人群羡慕、质疑，有时甚至被鄙视。人们羡慕100倍的回报，质疑它是否是庞氏骗局，鄙视加密货币的投机和赌博性质，也不理解为什么尽管许多"专家"持否定意见，比特币却没有跌至零。这个网站旨在帮助我们像5岁孩子一样去神秘化和理解比特币。</p>
+                        </div>
                     </div>
 
-                    <div class="tab-content">
-                        <!-- Home Tab -->
-                        <div id="home" class="tab-pane active">
-                            <h2>Why this site is built?</h2>
-                            <div class="content-section">
-                                <p class="intro-text">The simple answer is: so that people can understand bitcoin to its core before investing in bitcoin. The motto I hold most valuable in investing is from Peter Lynch: "Know what you own. If you can't explain to a 5 year old why you own a stock (or asset), you shouldn't own it". Bitcoin has been envied, questioned, and sometimes even despised by the broader population. People are envied of the 100X return, question if it's a ponzi scheme, despised by the speculation and gambling nature of crypto, and don't understand why bitcoin hasn't fallen to zero despite the opinions of many "experts". This website aims to help us demystify and understand bitcoin as if we are all 5 year olds.</p>
-                            </div>
-                        </div>
-
-                        <!-- Bitcoin White Paper Tab -->
-                        <div id="whitepaper" class="tab-pane">
-                            <h2>Bitcoin White Paper</h2>
-                            <div class="content-section">
-                                <p class="intro-text">The original Bitcoin white paper by Satoshi Nakamoto, published in 2008, laid the foundation for decentralized digital currency.</p>
+                    <!-- Bitcoin White Paper Section -->
+                    <div id="whitepaper" class="content-section">
+                        <h2>比特币白皮书</h2>
+                        <div class="section-content">
+                                <p class="intro-text">中本聪于2008年发布的原始比特币白皮书，为去中心化数字货币奠定了基础。</p>
                                 
                                 <div class="whitepaper-info">
                                     <div class="info-card">
-                                        <h3>Abstract</h3>
-                                        <p>A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending.</p>
+                                        <h3>摘要</h3>
+                                        <p>纯点对点版本的电子现金将允许在线支付直接从一方发送到另一方，而无需通过金融机构。数字签名提供了部分解决方案，但如果仍需要受信任的第三方来防止双重支付，那么主要优势就失去了。</p>
                                     </div>
                                     
                                     <div class="info-card">
-                                        <h3>Key Concepts</h3>
+                                        <h3>核心概念</h3>
                                         <ul>
-                                            <li>Peer-to-peer electronic cash system</li>
-                                            <li>Proof-of-work mechanism</li>
-                                            <li>Decentralized network consensus</li>
-                                            <li>Cryptographic hash functions</li>
-                                            <li>Merkle trees and blockchain structure</li>
+                                            <li>点对点电子现金系统</li>
+                                            <li>工作量证明机制</li>
+                                            <li>去中心化网络共识</li>
+                                            <li>加密哈希函数</li>
+                                            <li>默克尔树和区块链结构</li>
                                         </ul>
                                     </div>
 
                                     <div class="info-card">
-                                        <h3>Resources</h3>
-                                        <p>Access the original Bitcoin white paper:</p>
-                                        <a href="https://bitcoin.org/bitcoin.pdf" class="btn btn-primary" target="_blank">Download PDF</a>
-                                        <a href="https://bitcoin.org/en/bitcoin-paper" class="btn btn-secondary" target="_blank">Read Online</a>
+                                        <h3>资源</h3>
+                                        <p>访问原始比特币白皮书：</p>
+                                        <a href="https://bitcoin.org/bitcoin.pdf" class="btn btn-primary" target="_blank">下载PDF</a>
+                                        <a href="https://bitcoin.org/en/bitcoin-paper" class="btn btn-secondary" target="_blank">在线阅读</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Videos Tab -->
-                        <div id="videos" class="tab-pane">
-                            <h2>Videos</h2>
-                            <div class="content-section">
-                                <p class="intro-text">Educational videos about Bitcoin, blockchain technology, and cryptocurrency fundamentals.</p>
+                    <!-- Videos Section -->
+                    <div id="videos" class="content-section">
+                        <h2>视频</h2>
+                        <div class="section-content">
+                                <p class="intro-text">关于比特币、区块链技术和加密货币基础知识的教学视频。</p>
                                 
                                 <div class="video-grid" id="video-grid">
                                     <!-- YouTube videos will be loaded here dynamically -->
@@ -84,151 +94,177 @@
                             </div>
                         </div>
 
-                        <!-- Blogs Tab -->
-                        <div id="blogs" class="tab-pane">
-                            <h2>Blogs</h2>
-                            <div class="content-section">
-                                <p class="intro-text">Read articles and blog posts about Bitcoin developments, analysis, and insights.</p>
+                    <!-- Blogs Section -->
+                    <div id="blogs" class="content-section">
+                        <h2>博客</h2>
+                        <div class="section-content">
+                                <p class="intro-text">阅读有关比特币发展、分析和见解的文章和博客文章。</p>
                                 
                                 <div class="blog-list" id="blog-list">
                                     <!-- Patreon blog post will be loaded here dynamically -->
                                     <article class="blog-item">
                                         <div class="blog-meta">
-                                            <span class="blog-date">January 15, 2024</span>
-                                            <span class="blog-category">Technology</span>
+                                            <span class="blog-date">2024年1月15日</span>
+                                            <span class="blog-category">技术</span>
                                         </div>
-                                        <h3>The Evolution of Bitcoin</h3>
-                                        <p>Exploring how Bitcoin has evolved since its inception and its impact on the financial world.</p>
-                                        <a href="#" class="read-more">Read More →</a>
+                                        <h3>比特币的演变</h3>
+                                        <p>探索比特币自诞生以来的演变过程及其对金融世界的影响。</p>
+                                        <a href="#" class="read-more">阅读更多 →</a>
                                     </article>
                                     
                                     <article class="blog-item">
                                         <div class="blog-meta">
-                                            <span class="blog-date">January 10, 2024</span>
-                                            <span class="blog-category">Economics</span>
+                                            <span class="blog-date">2024年1月10日</span>
+                                            <span class="blog-category">经济学</span>
                                         </div>
-                                        <h3>Bitcoin as a Store of Value</h3>
-                                        <p>Analyzing Bitcoin's potential role as digital gold and a hedge against inflation.</p>
-                                        <a href="#" class="read-more">Read More →</a>
+                                        <h3>比特币作为价值存储</h3>
+                                        <p>分析比特币作为数字黄金和通胀对冲工具的潜在作用。</p>
+                                        <a href="#" class="read-more">阅读更多 →</a>
                                     </article>
                                     
                                     <article class="blog-item">
                                         <div class="blog-meta">
-                                            <span class="blog-date">January 5, 2024</span>
-                                            <span class="blog-category">Education</span>
+                                            <span class="blog-date">2024年1月5日</span>
+                                            <span class="blog-category">教育</span>
                                         </div>
-                                        <h3>Getting Started with Bitcoin</h3>
-                                        <p>A beginner's guide to understanding and using Bitcoin for the first time.</p>
-                                        <a href="#" class="read-more">Read More →</a>
+                                        <h3>比特币入门</h3>
+                                        <p>首次理解和使用比特币的初学者指南。</p>
+                                        <a href="#" class="read-more">阅读更多 →</a>
                                     </article>
                                     
                                     <article class="blog-item">
                                         <div class="blog-meta">
-                                            <span class="blog-date">December 28, 2023</span>
-                                            <span class="blog-category">Security</span>
+                                            <span class="blog-date">2023年12月28日</span>
+                                            <span class="blog-category">安全</span>
                                         </div>
-                                        <h3>Securing Your Bitcoin Assets</h3>
-                                        <p>Essential security practices every Bitcoin holder should know and implement.</p>
-                                        <a href="#" class="read-more">Read More →</a>
+                                        <h3>保护您的比特币资产</h3>
+                                        <p>每个比特币持有者都应该了解并实施的基本安全实践。</p>
+                                        <a href="#" class="read-more">阅读更多 →</a>
                                     </article>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- FAQs Tab -->
-                        <div id="faqs" class="tab-pane">
-                            <h2>Frequently Asked Questions</h2>
-                            <div class="content-section">
-                                <p class="intro-text">Find answers to common questions about Bitcoin.</p>
+                    <!-- Recommended Websites Section -->
+                    <div id="recommended-websites" class="content-section">
+                        <h2>推荐网站</h2>
+                        <div class="section-content">
+                            <div class="recommended-websites-list">
+                                <div class="website-card">
+                                    <h3>九神的囤币指南</h3>
+                                    <p>投资比特币最难做到的就是两个字：怎么拿住。长期拿住比特币是达到财富自由最简单的投资策略：只要你拿住比特币三年获以上，按照历史数据来看，你亏钱的概率为0。但是这也是最难的操作。比特币变态的波动性让你很难控制住你的手。投资比特币最大的敌人不是政府，不是机构，也不是投机者，而是你自己。看完这一系列囤币指南对我很有帮助。</p>
+                                    <a href="https://coxxa.github.io/bitcoin-ahr999-HODL/#/di-san-zhang" class="btn btn-primary" target="_blank">访问网站</a>
+                                </div>
+
+                                <div class="website-card">
+                                    <h3>给女朋友做的比特币扫盲PPT</h3>
+                                    <p>这是我自己为了帮助我女朋友，父母，以及身边对于比特币和技术不了解的人做的一个扫盲PPT。想要真正了解比特币，太难了。</p>
+                                    <a href="https://docs.google.com/presentation/d/1OPDiZrNjLE_y8zAcNM9azn8IYLZ3vEvO7krW_rQeLPY/edit?usp=sharing" class="btn btn-primary" target="_blank">访问网站</a>
+                                </div>
+
+                                <div class="website-card">
+                                    <h3>所有关于比特币的图表</h3>
+                                    <p>所有关于比特币相关的有用图表，用来做价格分析，趋势分析，挖矿分析，等等</p>
+                                    <a href="https://charts.bitbo.io/halving-progress/" class="btn btn-primary" target="_blank">访问网站</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQs Section -->
+                    <div id="faqs" class="content-section">
+                        <h2>常见问题</h2>
+                        <div class="section-content">
+                                <p class="intro-text">查找有关比特币的常见问题的答案。</p>
                                 
                                 <div class="faq-list">
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>What is Bitcoin?</h3>
+                                            <h3>什么是比特币？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without the need for a central authority or intermediary. It was created in 2009 by an anonymous person or group using the pseudonym Satoshi Nakamoto.</p>
+                                            <p>比特币是一种去中心化的数字货币，可以在不需要中央机构或中介的情况下实现点对点交易。它于2009年由一个匿名的人或团体使用化名中本聪创建。</p>
                                         </div>
                                     </div>
                                     
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>How does Bitcoin work?</h3>
+                                            <h3>比特币是如何工作的？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>Bitcoin uses blockchain technology, a distributed ledger that records all transactions across a network of computers. Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain.</p>
+                                            <p>比特币使用区块链技术，这是一个在计算机网络中记录所有交易的分布式账本。交易通过网络节点通过密码学验证，并记录在一个称为区块链的公共分布式账本中。</p>
                                         </div>
                                     </div>
                                     
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>How do I buy Bitcoin?</h3>
+                                            <h3>如何购买比特币？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>You can buy Bitcoin through cryptocurrency exchanges, Bitcoin ATMs, peer-to-peer platforms, or by receiving it as payment. You'll need a Bitcoin wallet to store your Bitcoin after purchase.</p>
+                                            <p>您可以通过加密货币交易所、比特币ATM、点对点平台或接收比特币作为付款来购买比特币。购买后，您需要一个比特币钱包来存储您的比特币。</p>
                                         </div>
                                     </div>
                                     
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>Is Bitcoin legal?</h3>
+                                            <h3>比特币合法吗？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>Bitcoin's legal status varies by country. In most countries, Bitcoin is legal, but regulations differ. Some countries have banned it, while others have embraced it. It's important to check your local regulations.</p>
+                                            <p>比特币的法律地位因国家而异。在大多数国家，比特币是合法的，但法规有所不同。一些国家已经禁止了它，而另一些国家则接受了它。重要的是要检查您当地的法规。</p>
                                         </div>
                                     </div>
                                     
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>How is Bitcoin stored?</h3>
+                                            <h3>比特币是如何存储的？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>Bitcoin is stored in digital wallets, which can be software-based (hot wallets) or hardware-based (cold wallets). Hardware wallets are considered more secure as they store private keys offline.</p>
+                                            <p>比特币存储在数字钱包中，可以是基于软件的（热钱包）或基于硬件的（冷钱包）。硬件钱包被认为更安全，因为它们离线存储私钥。</p>
                                         </div>
                                     </div>
                                     
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>What is Bitcoin mining?</h3>
+                                            <h3>什么是比特币挖矿？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>Bitcoin mining is the process by which new bitcoins are created and transactions are added to the blockchain. Miners use powerful computers to solve complex mathematical problems, and the first to solve a problem gets to add the next block to the blockchain and receive a reward.</p>
+                                            <p>比特币挖矿是创建新比特币并将交易添加到区块链的过程。矿工使用强大的计算机来解决复杂的数学问题，第一个解决问题的人可以将下一个区块添加到区块链并获得奖励。</p>
                                         </div>
                                     </div>
                                     
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>Will bitcoin ever collapse?</h3>
+                                            <h3>比特币会崩溃吗？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>While no investment is guaranteed, Bitcoin has shown remarkable resilience over its 15+ year history, surviving numerous market crashes, regulatory challenges, and technological concerns. Its decentralized nature, fixed supply, and growing adoption suggest it could persist long-term. However, like any asset, Bitcoin faces risks including regulatory changes, technological vulnerabilities, competition from other cryptocurrencies, or loss of trust. The possibility of collapse exists, but many believe Bitcoin's fundamentals make it increasingly resistant to complete failure as adoption grows.</p>
+                                            <p>虽然没有任何投资是有保证的，但比特币在其15年以上的历史中表现出显著的韧性，经历了多次市场崩盘、监管挑战和技术担忧。其去中心化性质、固定供应量和不断增长的采用率表明它可能长期存在。然而，像任何资产一样，比特币面临风险，包括监管变化、技术漏洞、来自其他加密货币的竞争或信任的丧失。崩溃的可能性存在，但许多人认为，随着采用的增长，比特币的基本面使其越来越能够抵抗完全失败。</p>
                                         </div>
                                     </div>
                                     
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>Why do people say bitcoin will go to 21 million?</h3>
+                                            <h3>为什么人们说比特币将达到2100万？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>Bitcoin has a hard-coded maximum supply of 21 million coins, which is built into its protocol by Satoshi Nakamoto. This limit cannot be changed without consensus from the network. The 21 million cap creates scarcity, similar to precious metals like gold. However, when people say "Bitcoin will go to 21 million," they're usually referring to the price or adoption reaching new heights, not the supply limit. The actual number of bitcoins will approach but never exactly reach 21 million due to the mathematics of the mining reward halving, with the final bitcoin expected to be mined around the year 2140.</p>
+                                            <p>比特币的最大供应量被硬编码为2100万枚，这是由中本聪内置到其协议中的。这个限制不能在没有网络共识的情况下改变。2100万的上限创造了稀缺性，类似于黄金等贵金属。然而，当人们说"比特币将达到2100万"时，他们通常指的是价格或采用率达到新的高度，而不是供应限制。由于挖矿奖励减半的数学特性，实际比特币数量将接近但永远不会完全达到2100万，预计最后一枚比特币将在2140年左右被挖出。</p>
                                         </div>
                                     </div>
                                     
                                     <div class="faq-item">
                                         <div class="faq-question">
-                                            <h3>What is the fundamental of bitcoin?</h3>
+                                            <h3>比特币的基本原理是什么？</h3>
                                             <span class="faq-toggle">+</span>
                                         </div>
                                         <div class="faq-answer">
-                                            <p>The fundamental value proposition of Bitcoin rests on several key principles: decentralization (no single authority controls it), scarcity (fixed supply of 21 million coins), security (cryptographic proof secured by the blockchain), transparency (all transactions are publicly verifiable), programmability (can be used as programmable money), and portability (can be sent anywhere in the world quickly). Bitcoin fundamentally represents a trustless, peer-to-peer electronic cash system that operates independently of governments and financial institutions, making it resistant to censorship and inflation.</p>
+                                            <p>比特币的基本价值主张基于几个关键原则：去中心化（没有单一权威控制它）、稀缺性（固定供应量2100万枚）、安全性（由区块链保护的密码学证明）、透明性（所有交易都可以公开验证）、可编程性（可以用作可编程货币）和可移植性（可以快速发送到世界任何地方）。比特币从根本上代表了一个无需信任的点对点电子现金系统，它独立于政府和金融机构运作，使其能够抵抗审查和通胀。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -242,7 +278,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Bitcoin Knowledge Base. All rights reserved.</p>
+            <p>&copy; 2024 比特币知识库。保留所有权利。</p>
         </div>
     </footer>
 
