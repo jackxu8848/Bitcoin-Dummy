@@ -11,6 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownItems = document.querySelectorAll('.dropdown-item');
     const contentSections = document.querySelectorAll('.content-section');
     const hasDropdowns = document.querySelectorAll('.has-dropdown');
+    
+    // Mobile menu elements
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileMenuLayers = document.querySelectorAll('.mobile-menu-layer');
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+    const mobileMenuBack = document.querySelector('.mobile-menu-back');
 
     // Handle main navigation link clicks
     navLinks.forEach(link => {
@@ -55,14 +62,78 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close dropdown when clicking outside
+    // Close dropdown when clicking outside (desktop only)
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('.has-dropdown')) {
-            hasDropdowns.forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
+        if (window.innerWidth > 768) {
+            if (!e.target.closest('.has-dropdown')) {
+                hasDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
         }
     });
+
+    // Mobile menu functionality
+    if (hamburgerMenu && mobileMenuOverlay) {
+        // Toggle mobile menu
+        hamburgerMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+            hamburgerMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking overlay
+        mobileMenuOverlay.addEventListener('click', function(e) {
+            if (e.target === mobileMenuOverlay) {
+                closeMobileMenu();
+            }
+        });
+
+        // Handle mobile menu item clicks
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Check if it has submenu
+                if (this.classList.contains('has-submenu')) {
+                    const submenuName = this.getAttribute('data-submenu');
+                    showMobileMenuLayer(submenuName);
+                } else {
+                    // Regular menu item - navigate to section
+                    const targetSection = this.getAttribute('data-section');
+                    if (targetSection) {
+                        switchSection(targetSection, null);
+                        closeMobileMenu();
+                    }
+                }
+            });
+        });
+
+        // Handle back button
+        if (mobileMenuBack) {
+            mobileMenuBack.addEventListener('click', function(e) {
+                e.preventDefault();
+                showMobileMenuLayer('main');
+            });
+        }
+
+        function showMobileMenuLayer(layerName) {
+            mobileMenuLayers.forEach(layer => {
+                layer.classList.remove('active');
+            });
+            const targetLayer = document.querySelector(`.mobile-menu-layer[data-layer="${layerName}"]`);
+            if (targetLayer) {
+                targetLayer.classList.add('active');
+            }
+        }
+
+        function closeMobileMenu() {
+            hamburgerMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            // Reset to main layer
+            showMobileMenuLayer('main');
+        }
+    }
 
     // Function to switch sections
     function switchSection(targetSection, activeLink) {
@@ -129,9 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load YouTube videos
     loadYouTubeVideos();
-    
-    // Load Patreon blog post
-    loadPatreonPost();
 });
 
 // YouTube video URLs
