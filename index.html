@@ -14,25 +14,57 @@
                     <span class="bitcoin-symbol">₿</span>
                     <span class="logo-text">比特币入门指南</span>
                 </div>
+                <button class="hamburger-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="nav-menu">
                     <li class="nav-item">
                         <a href="#" class="nav-link" data-section="home">首页</a>
                     </li>
                     <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link" data-section="websites">网站</a>
+                        <a href="#" class="nav-link" data-section="reading-materials">阅读资料</a>
                         <ul class="dropdown-menu">
                             <li><a href="#" class="dropdown-item" data-section="whitepaper">比特币白皮书</a></li>
-                            <li><a href="#" class="dropdown-item" data-section="blogs">博客</a></li>
-                            <li><a href="#" class="dropdown-item" data-section="recommended-websites">推荐网站</a></li>
+                            <li><a href="#" class="dropdown-item" data-section="hodl-guide">九神的囤币指南</a></li>
+                            <li><a href="#" class="dropdown-item" data-section="bitcoin-ppt">给女朋友的比特币扫盲PPT</a></li>
+                            <li><a href="#" class="dropdown-item" data-section="bitcoin-charts">比特币图表</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-section="videos">视频</a>
+                        <a href="#" class="nav-link" data-section="videos">学习视频</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-section="faqs">常见问题</a>
+                        <a href="#" class="nav-link" data-section="recommended-books">推荐书籍</a>
                     </li>
                 </ul>
+                
+                <!-- Mobile Menu Overlay -->
+                <div class="mobile-menu-overlay">
+                    <div class="mobile-menu-container">
+                        <!-- Layer 1: Main Menu -->
+                        <div class="mobile-menu-layer active" data-layer="main">
+                            <ul class="mobile-menu-list">
+                                <li><a href="#" class="mobile-menu-item" data-section="home">首页</a></li>
+                                <li><a href="#" class="mobile-menu-item has-submenu" data-submenu="reading-materials">阅读资料 <span class="arrow">→</span></a></li>
+                                <li><a href="#" class="mobile-menu-item" data-section="videos">学习视频</a></li>
+                                <li><a href="#" class="mobile-menu-item" data-section="recommended-books">推荐书籍</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Layer 2: Websites Submenu -->
+                        <div class="mobile-menu-layer" data-layer="reading-materials">
+                            <button class="mobile-menu-back">← 返回</button>
+                            <ul class="mobile-menu-list">
+                                <li><a href="#" class="mobile-menu-item" data-section="whitepaper">比特币白皮书</a></li>
+                                <li><a href="#" class="mobile-menu-item" data-section="hodl-guide">九神的囤币指南</a></li>
+                                <li><a href="#" class="mobile-menu-item" data-section="bitcoin-ppt">给女朋友的比特币扫盲PPT</a></li>
+                                <li><a href="#" class="mobile-menu-item" data-section="bitcoin-charts">比特币图表</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -45,7 +77,11 @@
                     <div id="home" class="content-section active">
                         <h2>为什么创建这个网站？</h2>
                         <div class="section-content">
-                            <p class="intro-text">简单的答案是：为了让人们在投资比特币之前能够从根本上理解比特币。我在投资方面最珍视的座右铭来自彼得·林奇："了解你拥有什么。如果你无法向一个5岁的孩子解释你为什么拥有某只股票（或资产），那么你就不应该拥有它"。比特币一直被更广泛的人群羡慕、质疑，有时甚至被鄙视。人们羡慕100倍的回报，质疑它是否是庞氏骗局，鄙视加密货币的投机和赌博性质，也不理解为什么尽管许多"专家"持否定意见，比特币却没有跌至零。这个网站旨在帮助我们像5岁孩子一样去神秘化和理解比特币。</p>
+                            <p class="intro-text">简单的答案是：<strong>为了让人们在投资比特币之前能够从根本上理解比特币</strong>。我在投资方面最珍视的座右铭来自彼得·林奇："了解你拥有什么。如果你无法向一个5岁的孩子解释你为什么拥有某只股票（或资产），那么你就不应该拥有它"。比特币一直被更广泛的人群羡慕、质疑，有时甚至被鄙视。人们羡慕100倍的回报，质疑它是否是庞氏骗局，鄙视加密货币的投机和赌博性质，也不理解为什么尽管许多"专家"持否定意见，比特币却没有跌至零。这个网站旨在帮助我们像5岁孩子一样去神秘化和理解比特币。</p>
+                            
+                            <p class="intro-text">我一开始了解和学习比特币的时候，网上充斥着各种各样的视频，博客，网站。大多数告诉你比特币是你一夜暴富的机会，比特币下个月会到什么价格这种无稽之谈。而光看比特币的专业介绍不仅枯燥乏味，而且很难成为知识体系。所以，很长一段时间我很想学习比特币，但是不知道如何入手。</p>
+                            
+                            <p class="intro-text">我做这个网站的目的就是和大家分享我的研究成果，用最简单的方式让大家理解比特币背后的本质。并且提供一些我认为非常有用的读物。</p>
                         </div>
                     </div>
 
@@ -84,7 +120,7 @@
 
                     <!-- Videos Section -->
                     <div id="videos" class="content-section">
-                        <h2>视频</h2>
+                        <h2>学习视频</h2>
                         <div class="section-content">
                                 <p class="intro-text">关于比特币、区块链技术和加密货币基础知识的教学视频。</p>
                                 
@@ -94,179 +130,59 @@
                             </div>
                         </div>
 
-                    <!-- Blogs Section -->
-                    <div id="blogs" class="content-section">
-                        <h2>博客</h2>
+                    <!-- HODL Guide Section -->
+                    <div id="hodl-guide" class="content-section">
+                        <h2>九神的囤币指南</h2>
                         <div class="section-content">
-                                <p class="intro-text">阅读有关比特币发展、分析和见解的文章和博客文章。</p>
-                                
-                                <div class="blog-list" id="blog-list">
-                                    <!-- Patreon blog post will be loaded here dynamically -->
-                                    <article class="blog-item">
-                                        <div class="blog-meta">
-                                            <span class="blog-date">2024年1月15日</span>
-                                            <span class="blog-category">技术</span>
-                                        </div>
-                                        <h3>比特币的演变</h3>
-                                        <p>探索比特币自诞生以来的演变过程及其对金融世界的影响。</p>
-                                        <a href="#" class="read-more">阅读更多 →</a>
-                                    </article>
-                                    
-                                    <article class="blog-item">
-                                        <div class="blog-meta">
-                                            <span class="blog-date">2024年1月10日</span>
-                                            <span class="blog-category">经济学</span>
-                                        </div>
-                                        <h3>比特币作为价值存储</h3>
-                                        <p>分析比特币作为数字黄金和通胀对冲工具的潜在作用。</p>
-                                        <a href="#" class="read-more">阅读更多 →</a>
-                                    </article>
-                                    
-                                    <article class="blog-item">
-                                        <div class="blog-meta">
-                                            <span class="blog-date">2024年1月5日</span>
-                                            <span class="blog-category">教育</span>
-                                        </div>
-                                        <h3>比特币入门</h3>
-                                        <p>首次理解和使用比特币的初学者指南。</p>
-                                        <a href="#" class="read-more">阅读更多 →</a>
-                                    </article>
-                                    
-                                    <article class="blog-item">
-                                        <div class="blog-meta">
-                                            <span class="blog-date">2023年12月28日</span>
-                                            <span class="blog-category">安全</span>
-                                        </div>
-                                        <h3>保护您的比特币资产</h3>
-                                        <p>每个比特币持有者都应该了解并实施的基本安全实践。</p>
-                                        <a href="#" class="read-more">阅读更多 →</a>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-
-                    <!-- Recommended Websites Section -->
-                    <div id="recommended-websites" class="content-section">
-                        <h2>推荐网站</h2>
-                        <div class="section-content">
-                            <div class="recommended-websites-list">
-                                <div class="website-card">
-                                    <h3>九神的囤币指南</h3>
-                                    <p>投资比特币最难做到的就是两个字：怎么拿住。长期拿住比特币是达到财富自由最简单的投资策略：只要你拿住比特币三年获以上，按照历史数据来看，你亏钱的概率为0。但是这也是最难的操作。比特币变态的波动性让你很难控制住你的手。投资比特币最大的敌人不是政府，不是机构，也不是投机者，而是你自己。看完这一系列囤币指南对我很有帮助。</p>
-                                    <a href="https://coxxa.github.io/bitcoin-ahr999-HODL/#/di-san-zhang" class="btn btn-primary" target="_blank">访问网站</a>
-                                </div>
-
-                                <div class="website-card">
-                                    <h3>给女朋友做的比特币扫盲PPT</h3>
-                                    <p>这是我自己为了帮助我女朋友，父母，以及身边对于比特币和技术不了解的人做的一个扫盲PPT。想要真正了解比特币，太难了。</p>
-                                    <a href="https://docs.google.com/presentation/d/1OPDiZrNjLE_y8zAcNM9azn8IYLZ3vEvO7krW_rQeLPY/edit?usp=sharing" class="btn btn-primary" target="_blank">访问网站</a>
-                                </div>
-
-                                <div class="website-card">
-                                    <h3>所有关于比特币的图表</h3>
-                                    <p>所有关于比特币相关的有用图表，用来做价格分析，趋势分析，挖矿分析，等等</p>
-                                    <a href="https://charts.bitbo.io/halving-progress/" class="btn btn-primary" target="_blank">访问网站</a>
-                                </div>
+                            <p class="intro-text">投资比特币最难做到的就是两个字：怎么拿住。长期拿住比特币是达到财富自由最简单的投资策略：只要你拿住比特币三年获以上，按照历史数据来看，你亏钱的概率为0。但是这也是最难的操作。比特币变态的波动性让你很难控制住你的手。投资比特币最大的敌人不是政府，不是机构，也不是投机者，而是你自己。看完这一系列囤币指南对我很有帮助。</p>
+                            <div class="website-link">
+                                <a href="https://coxxa.github.io/bitcoin-ahr999-HODL/#/di-san-zhang" class="btn btn-primary" target="_blank">访问网站</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- FAQs Section -->
-                    <div id="faqs" class="content-section">
-                        <h2>常见问题</h2>
+                    <!-- Bitcoin PPT Section -->
+                    <div id="bitcoin-ppt" class="content-section">
+                        <h2>给女朋友的比特币扫盲PPT</h2>
                         <div class="section-content">
-                                <p class="intro-text">查找有关比特币的常见问题的答案。</p>
-                                
-                                <div class="faq-list">
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>什么是比特币？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>比特币是一种去中心化的数字货币，可以在不需要中央机构或中介的情况下实现点对点交易。它于2009年由一个匿名的人或团体使用化名中本聪创建。</p>
-                                        </div>
+                            <p class="intro-text">这是我自己为了帮助我女朋友，父母，以及身边对于比特币和技术不了解的人做的一个扫盲PPT。想要真正了解比特币，太难了。</p>
+                            <div class="website-link">
+                                <a href="https://docs.google.com/presentation/d/1OPDiZrNjLE_y8zAcNM9azn8IYLZ3vEvO7krW_rQeLPY/edit?usp=sharing" class="btn btn-primary" target="_blank">访问网站</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bitcoin Charts Section -->
+                    <div id="bitcoin-charts" class="content-section">
+                        <h2>比特币图表</h2>
+                        <div class="section-content">
+                            <p class="intro-text">所有关于比特币相关的有用图表，用来做价格分析，趋势分析，挖矿分析，等等</p>
+                            <div class="website-link">
+                                <a href="https://charts.bitbo.io/halving-progress/" class="btn btn-primary" target="_blank">访问网站</a>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <!-- Recommended Books Section -->
+                    <div id="recommended-books" class="content-section">
+                        <h2>推荐书籍</h2>
+                        <div class="section-content">
+                            <p class="intro-text">以下是我推荐的关于比特币和货币理论的优秀书籍，它们从不同角度深入探讨了比特币的本质和价值。</p>
+                            
+                            <div class="books-list">
+                                <div class="book-card">
+                                    <h3>Bitcoin Standard 货币本位</h3>
+                                    <p>这本书深入探讨了货币的历史演变，从贝壳到黄金再到法定货币，最终解释了比特币作为数字黄金的价值。作者Saifedean Ammous通过历史案例和经济学原理，阐述了为什么比特币可能成为21世纪的货币标准。这本书不仅解释了比特币的技术原理，更重要的是从货币学的角度分析了比特币的长期价值。</p>
                                     </div>
                                     
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>比特币是如何工作的？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>比特币使用区块链技术，这是一个在计算机网络中记录所有交易的分布式账本。交易通过网络节点通过密码学验证，并记录在一个称为区块链的公共分布式账本中。</p>
-                                        </div>
+                                <div class="book-card">
+                                    <h3>Read Write Own</h3>
+                                    <p>这本书从技术和创新的角度探讨了区块链和加密货币的未来。作者深入分析了去中心化技术如何改变互联网的架构，以及为什么"读写拥有"（Read Write Own）模式将成为下一代互联网的基础。这本书帮助读者理解比特币和区块链技术如何赋予个人更多的数字主权，以及这种转变对社会的深远影响。</p>
                                     </div>
                                     
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>如何购买比特币？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>您可以通过加密货币交易所、比特币ATM、点对点平台或接收比特币作为付款来购买比特币。购买后，您需要一个比特币钱包来存储您的比特币。</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>比特币合法吗？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>比特币的法律地位因国家而异。在大多数国家，比特币是合法的，但法规有所不同。一些国家已经禁止了它，而另一些国家则接受了它。重要的是要检查您当地的法规。</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>比特币是如何存储的？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>比特币存储在数字钱包中，可以是基于软件的（热钱包）或基于硬件的（冷钱包）。硬件钱包被认为更安全，因为它们离线存储私钥。</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>什么是比特币挖矿？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>比特币挖矿是创建新比特币并将交易添加到区块链的过程。矿工使用强大的计算机来解决复杂的数学问题，第一个解决问题的人可以将下一个区块添加到区块链并获得奖励。</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>比特币会崩溃吗？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>虽然没有任何投资是有保证的，但比特币在其15年以上的历史中表现出显著的韧性，经历了多次市场崩盘、监管挑战和技术担忧。其去中心化性质、固定供应量和不断增长的采用率表明它可能长期存在。然而，像任何资产一样，比特币面临风险，包括监管变化、技术漏洞、来自其他加密货币的竞争或信任的丧失。崩溃的可能性存在，但许多人认为，随着采用的增长，比特币的基本面使其越来越能够抵抗完全失败。</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>为什么人们说比特币将达到2100万？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>比特币的最大供应量被硬编码为2100万枚，这是由中本聪内置到其协议中的。这个限制不能在没有网络共识的情况下改变。2100万的上限创造了稀缺性，类似于黄金等贵金属。然而，当人们说"比特币将达到2100万"时，他们通常指的是价格或采用率达到新的高度，而不是供应限制。由于挖矿奖励减半的数学特性，实际比特币数量将接近但永远不会完全达到2100万，预计最后一枚比特币将在2140年左右被挖出。</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="faq-item">
-                                        <div class="faq-question">
-                                            <h3>比特币的基本原理是什么？</h3>
-                                            <span class="faq-toggle">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                            <p>比特币的基本价值主张基于几个关键原则：去中心化（没有单一权威控制它）、稀缺性（固定供应量2100万枚）、安全性（由区块链保护的密码学证明）、透明性（所有交易都可以公开验证）、可编程性（可以用作可编程货币）和可移植性（可以快速发送到世界任何地方）。比特币从根本上代表了一个无需信任的点对点电子现金系统，它独立于政府和金融机构运作，使其能够抵抗审查和通胀。</p>
-                                        </div>
-                                    </div>
+                                <div class="book-card">
+                                    <h3>The Road to Serfdom 通往奴役之路</h3>
+                                    <p>虽然这本书不是直接关于比特币的，但哈耶克的经典著作《通往奴役之路》为理解比特币的哲学基础提供了重要视角。这本书阐述了中央集权和计划经济如何导致个人自由的丧失，以及为什么分散的、去中心化的系统对于保护个人自由至关重要。理解这本书的核心思想，有助于我们理解为什么比特币的去中心化特性如此重要，以及它如何成为对抗货币贬值和金融审查的工具。</p>
                                 </div>
                             </div>
                         </div>

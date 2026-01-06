@@ -40,6 +40,7 @@ header {
 
 .navbar {
     padding: 1rem 0;
+    position: relative;
 }
 
 .navbar .container {
@@ -130,6 +131,46 @@ header {
     background-color: rgba(247, 147, 26, 0.1);
     color: var(--primary-color);
 }
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu Overlay - Hidden on desktop */
+.mobile-menu-overlay {
+    display: none;
+}
+
+/* Mobile menu styles are in the responsive section below */
 
 /* Hero Section */
 .hero {
@@ -588,6 +629,43 @@ footer .container {
     margin-top: 1rem;
 }
 
+.website-link {
+    margin-top: 2rem;
+}
+
+/* Recommended Books Styles */
+.books-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.book-card {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.book-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.book-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
 /* Video Styles */
 .video-grid {
     display: grid;
@@ -807,6 +885,110 @@ footer .container {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .mobile-menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .mobile-menu-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100%;
+        background-color: var(--white);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .mobile-menu-overlay.active .mobile-menu-container {
+        transform: translateX(0);
+    }
+
+    .mobile-menu-layer {
+        display: none;
+        padding: 1rem;
+        min-height: 100%;
+    }
+
+    .mobile-menu-layer.active {
+        display: block;
+    }
+
+    .mobile-menu-back {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        transition: background-color 0.2s ease;
+    }
+
+    .mobile-menu-back:hover {
+        background-color: rgba(247, 147, 26, 0.1);
+    }
+
+    .mobile-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        color: var(--text-color);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border-color);
+        transition: background-color 0.2s ease, color 0.2s ease;
+        font-weight: 500;
+    }
+
+    .mobile-menu-item:hover,
+    .mobile-menu-item.active {
+        background-color: rgba(247, 147, 26, 0.1);
+        color: var(--primary-color);
+    }
+
+    .mobile-menu-item .arrow {
+        color: var(--text-light);
+        font-size: 1.2rem;
+    }
     .page-title {
         font-size: 2rem;
     }
@@ -834,7 +1016,8 @@ footer .container {
 
     .whitepaper-info,
     .video-grid,
-    .recommended-websites-list {
+    .recommended-websites-list,
+    .books-list {
         grid-template-columns: 1fr;
     }
 
